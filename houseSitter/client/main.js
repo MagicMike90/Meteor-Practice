@@ -11,6 +11,7 @@ Tracker.autorun(function() {
     );
 });
 
+
 Template.selectHouse.helpers({
     housesNameId: function() {
         return HousesCollection.find({});
@@ -34,7 +35,15 @@ Template.showHouse.helpers({
     }
 });
 
-
+Template.showHouse.events({
+  'click button#delete': function (evt) {
+    var id = this._id;
+    var deleteConfirmation = confirm('Really delete this house?');
+    if (deleteConfirmation) {
+      HousesCollection.remove(id);
+    }
+  }
+});
 
 Template.plantDetails.events({
     'click button.water': function(evt) {
@@ -49,4 +58,21 @@ Template.plantDetails.events({
             }
         });
     }
+});
+Template.houseForm.events({
+  'click button#saveHouse': function (evt) {
+    evt.preventDefault();
+    var houseName = $('input[id=house-name]').val();
+    var plantColor = $('input[id=plant-color]').val();
+    var plantInstructions = $('input[id=plant-instructions]').val();
+    Session.set('selectedHouseId', HousesCollection.insert({
+      name: houseName,
+      plants: [{
+        color: plantColor,
+        instructions: plantInstructions
+      }]
+    }));
+    // empty the form
+    $('input').val('');
+  }
 });
