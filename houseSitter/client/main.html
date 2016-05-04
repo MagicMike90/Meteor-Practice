@@ -6,21 +6,13 @@
   <h1>The House-Sitter App</h1> {{> selectHouse }} {{> showHouse }} {{> houseForm }}
 </body>
 <template name="selectHouse">
-<<<<<<< HEAD
     <select id="selectHouse">
         <option value="" {{isSelected}}></option>
         {{#each housesNameId}}
         <option value="{{_id}}" {{isSelected}}>{{name}}</option>
         {{/each}}
     </select>
-=======
-  <select id="selectHouse">
-    <option value="" {{isSeletected}}></option>
-    {{#each housesNameId}}
-    <option value="{{_id}}" {{isSelected}}>{{name}}</option>
-    {{/each}}
-  </select>
->>>>>>> c787f5e9dcc0a2168d206bc05fbee65607dfa9fd
+
 </template>
 <template name="showHouse">
   {{#with house}}
@@ -42,20 +34,6 @@
 
 
 <template name="houseForm">
-<<<<<<< HEAD
-    <h3>Add a house</h3>
-    <form id="houseForm">
-        Name
-        <input id="house-name" type="text" placeholder="Name">
-        <br/> Plant
-        <br/> Color
-        <input id="plant-color" type="text"> Instructions
-        <input id="plant-instructions" type="text">
-        <br/>
-        <br/>
-        <button id="saveHouse">Save House</button>
-    </form>
-=======
   <h3>Add a house</h3>
   <form id="houseForm">
     Name
@@ -68,5 +46,4 @@
     <br/>
     <button id="saveHouse">Save House</button>
   </form>
->>>>>>> c787f5e9dcc0a2168d206bc05fbee65607dfa9fd
 </template>
