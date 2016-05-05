@@ -4,7 +4,7 @@ import {
 
 Meteor.startup(() => {
     // code to run on server at startup
-    if (HousesCollection.find().count() === 0) {
+  //  if (HousesCollection.find().count() === 0) {
         var houses = [{
             name: 'Manuel',
             plants: [{
@@ -35,5 +35,5 @@ Meteor.startup(() => {
             HousesCollection.insert(houses.pop());
         }
         console.log('Added fixtures');
-    }
+    //}
 });

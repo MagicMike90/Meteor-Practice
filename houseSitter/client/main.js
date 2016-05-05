@@ -92,6 +92,7 @@ Template.plantDetails.events({
         var plantId = $(evt.currentTarget).attr('data-id');
         Session.set(plantId, true);
         var lastvisit = new Date();
+        console.log('lastvisit',lastvisit);
         HousesCollection.update({
             _id: Session.get('selectedHouseId')
         }, {

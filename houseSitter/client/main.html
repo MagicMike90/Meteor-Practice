@@ -1,11 +1,26 @@
+
 <head>
-    <title>The HouseSitter</title>
+  <title>The HouseSitter</title>
 </head>
 
 <body>
-    <h1>The House-Sitter App</h1> {{> selectHouse }} {{> showHouse }} {{> houseForm selectedHouse}}
+  <h1>The House-Sitter App</h1>
+  {{> selectHouse }} {{> notificationArea }}
+  <div class="container">
+    <div class="left">
+      {{> showHouse }}
+    </div>
+    <div class="right">
+      {{> houseForm }}
+    </div>
+  </div>
 </body>
 
+<template name="notificationArea">
+  {{#if notification}}
+  <p class="{{notification.type}}">{{notification.text}}</p>
+  {{/if}}
+</template>
 
 <template name="selectHouse">
     <select id="selectHouse">
