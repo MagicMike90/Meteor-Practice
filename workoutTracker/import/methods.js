@@ -1,4 +1,5 @@
 // Creating a method follows the scheme of helpers: a method function that takes a key-value object as a parameter.
+import {check} from "meteor/check";
 Meteor.methods({
     // The key of the object is the name of the method.
     'CreateWorkout': function(data) {
@@ -8,7 +9,7 @@ Meteor.methods({
         });
 
         var distance = data.distance;
-        if (distance <= 0 || distance > 45) {
+        if (distance <= 0 || distance > 45|| !distance) {
             // If the validation fails, throw a new Meteor.Error. It’s like a normal JavaScript error but is automatically populated to the client.
             throw new Meteor.Error('Invalid distance');
         }
