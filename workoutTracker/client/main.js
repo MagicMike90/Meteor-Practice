@@ -67,6 +67,7 @@ Template.distanceByMonth.helpers({
     month: function() {
         return DistanceByMonth.find({}, {
             sort: {
+                // -1 or 1 to sort all documents in ascending or descending order
                 _id: 1
             }
         });
@@ -77,14 +78,19 @@ Template.distanceByMonth.helpers({
 });
 
 Template.addWorkout.events({
+    // Listen to the submit form event as usual.
     'submit form': function(evt, tpl) {
+        // The default behavior of a form submit should be prevented because it would reload the page.
         evt.preventDefault();
 
+        // Use jQuery to extract the data from the distance input field and make it an integer.
         var distance = parseInt(tpl.$('input[name="distance"]').val());
 
+        // The method is called by its name and additional parameters.
         Meteor.call('CreateWorkout', {
             distance: distance
         }, function(error, result) {
+            // The method has a callback that’s called if an error happens or a result was returned from the server.
             if (error) return alert('Error: ' + error.error);
         });
     }
