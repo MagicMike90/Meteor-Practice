@@ -12,6 +12,8 @@ Meteor.startup(() => {
     // code to run on server at startup
     WorkoutsCollection.remove({});
 
+
+
     if (Meteor.users.findOne()) {
         var userId = Meteor.users.findOne()._id;
 

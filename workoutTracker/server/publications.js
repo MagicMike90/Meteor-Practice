@@ -1,3 +1,5 @@
+import {check} from 'meteor/check';
+
 Meteor.publish('workouts', function(options) {
     check(options, {
         limit: Number,
