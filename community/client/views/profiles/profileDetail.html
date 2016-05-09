@@ -1,18 +1,10 @@
-<!-- <Template name="profileDetail">
-    <h1>{{name}}</h1>
-    <span>{{views}} views</span>
-    <p>{{profileText}}</p>
-</template>
-
-<Template name="profileDetailLeft">
-    <img classs="img-rounded img-responsive" src="{{profileImg}}">
-</Template> -->
 <template name="profileDetail">
-    {{> contentFor region='left' template="profileImage"}}
-    <h1>Manuel Schoebel</h1>
-    <p>I like to eat good food and also cooking it myself!</p>
+  <h1>{{name}}</h1>
+  <span>{{views}} views</span>
+  <p>{{profileText}}</p>
 </template>
 
-<template name="profileImage">
-    <img src="...">
+
+<template name="profileDetailLeft">
+  <img class="img-rounded img-responsive" src="{{profileImg}}">
 </template>

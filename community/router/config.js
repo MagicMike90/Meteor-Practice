@@ -1,8 +1,8 @@
 Router.configure({
-  layoutTemplate: 'masterLayout'
+    layoutTemplate: 'masterLayout'
 });
 
-// Router.plugin('membersOnly', {
-//   membersOnlyTpl: 'membersonly',
-//   only: ['profile.details']
-// });
+Router.plugin('membersOnly', {
+    membersOnlyTpl: 'membersonly',
+    only: ['profile.details']
+});

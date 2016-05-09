@@ -1,3 +1,7 @@
+import {
+    check
+} from 'meteor/check';
+
 Meteor.publish('profiles', function() {
     profiles = Meteor.wrapAsync(function(cb) {
         Meteor.setTimeout(function() {
