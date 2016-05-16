@@ -1,5 +1,14 @@
 <template name="CreateTravel">
-  <div class="create-travel">
-    <h1>Find me in app/client/templates/create_travel/create_travel</h1>
-  </div>
+  <!--Using type="method", on submit, the meteor method createBusService will be called by passing all the  eld values -->
+  {{#autoForm collection="Busservice" id="CreateBusServiceForm" type="method" class="container" meteormethod="createBusService"}}
+	  {{> afQuickField name='name'}}
+	  {{> afQuickField name='agency'}}
+	  {{> afQuickField name='seats'}}
+	  {{> afQuickField name='source'}}
+	  {{> afQuickField name='destination'}}
+	  {{> afQuickField name='startDateTime' type="datetime-local"}}
+	  {{> afQuickField name='endDateTime' type="datetime-local"}}
+	  {{> afQuickField name='fare'}}
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Create</button>
+  {{/autoForm}}
 </template>
