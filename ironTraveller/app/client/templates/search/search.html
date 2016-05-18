@@ -1,0 +1,13 @@
+<template name="Search">
+    <div class="col-xs-12 col-sm-12 col-md-12 text-center top-space well well-sm">Search</div>
+    <div class="col-xs-12 col-sm-12 col-md-12 well well-sm">
+        <div class="form" id="search-form">
+            {{#autoForm collection="Busservice" id="SearchBusServiceForm"}}
+            {{> afQuickField name='source'}}
+            {{> afQuickField name='destination'}}
+            {{> afQuickField name='startDateTime' type="date"}}
+            {{> afQuickField name='fare'}}
+            {{/autoForm}}
+        </div>
+    </div>
+</template>
