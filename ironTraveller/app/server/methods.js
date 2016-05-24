@@ -1,11 +1,14 @@
 /*****************************************************************************/
 /* Server Only Methods */
 /*****************************************************************************/
+import {check} from 'meteor/check'
 Meteor.methods({
     createBusService: function(busService) {
+        console.log("createBusService");
         busService.createdAt = new Date();
         busService.available_seats = busService.seats;
         check(busService, BusServiceSchema);
+                console.log("insert");
         Busservice.insert(busService);
     },
     bookMySeats: function(reservations) {
@@ -32,7 +35,7 @@ Meteor.methods({
     blockThisSeat: function(seat) {
         debugger;
         BlockedSeats.insert(seat, function(error, result) {
-            console.log(error);
+            console.log('error:',error);
             if (error) {
                 throw Meteor.Error("Block seat failed");
             } else {

@@ -16,3 +16,9 @@ Router.route('create_travel', {
   controller: 'CreateTravelController',
   where: 'client'
 });
+
+Router.route('book/:_id', {
+  name: 'book',
+  controller: 'BookController',
+  where: 'client'
+});
