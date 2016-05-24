@@ -23,3 +23,5 @@ aldeed:autoform
 momentjs:moment
 twbs:bootstrap
 session
+velocity:html-reporter
+sanjo:jasmine
